@@ -20,21 +20,37 @@ graph TD;
 ### Requirements
 * [phpmyadmin](https://github.com/phpmyadmin/phpmyadmin)
 * [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)
-* MariaDB
-* Apache
+* [LAMP](https://github.com/teddysun/lamp) 
 * [Goole APIS Client](https://github.com/googleapis/google-api-php-client)
 ## Deployment
+* Download the source code.
+```shell
+git clone https://github.com/T-AT/document_sharing
+```
+* Open the web-server database and create a new database name it odss_db and my_db.
+* Copy and paste the source code to the location where your local web server accessing your local projects.
+`Example: Ubuntu`
+```shell
+cp -r document_sharing /var/www/
+```
 
+* Install AdminLTE
 ```shell
 composer require "almasaeed2010/adminlte=~3.2"
 ```
-
+* Install Google APIs Client
 ```shell
 composer require google/apiclient:"^2.0"
 ```
+* Open a web browser and browse the project. E.g [localhost](http://localhost/document_sharing)
+> With Ubuntu
+> ```shell
+> sudo systemctl start apache2
+> sudo systemctl start mariadb
+> ```
 
 ### Platforms
-- [x] Windows 7,8,10
+- [x] Windows 7,8,10,11
 - [x] Linux
 - [x] macOS
 - [x] iOS (in progress)
@@ -44,12 +60,15 @@ composer require google/apiclient:"^2.0"
 ### Both Admin and Users Side
 * Login Page
   * The page where system users will submit their credentials to access the data and functionalities of the system.
+<p align='center'><img src="https://github.com/T-AT/document_sharing/blob/main/assets/uploads/login.png"></p>
 * Dashboard Page
   * The page where the system users will be redirected by default after logging into the Online Document Sharing System.
+<p align='center'><img src="https://github.com/T-AT/document_sharing/blob/main/assets/uploads/home.png"></p>
 * Manage Account Modal
   * The popup modal where the system users update their system credentials such as their email and password.
 * Document List
   * The page where all documents are listed. The admin can see all the documents that been created in the system while the users can only see his/her created documents.
+<p align='center'><img src="https://github.com/T-AT/document_sharing/blob/main/assets/uploads/document.png"></p>
 * Manage Document Page
   * The page where the system users create or update a document.
 * Document View Page
@@ -62,11 +81,15 @@ composer require google/apiclient:"^2.0"
 
 
 #### account test:
+* Default Admin Access
 `admin@admin.com`
 admin123 <br/>
+* Default Test Access
 `test@test.com`
 test123
 * You can sign with account `Google`
+
+![Alt](https://repobeats.axiom.co/api/embed/db5b20e88913db8908aaa356e9d4a2105054c91e.svg "Repobeats analytics image")
 
 <details><summary>Syuq</summary>
 <p>
@@ -75,3 +98,5 @@ test123
 [Syuq](https://github.com/Syuq)
 </p>
 </details>
+
+[!Issues](https://github.com/T-AT/document_sharing/issues/new)
